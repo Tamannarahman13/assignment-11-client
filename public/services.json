@@ -1,0 +1,38 @@
+[
+    {
+        "img": "https://i.ibb.co/c8vj0GH/wedding.jpg",
+        "description": "After you’ve checked out all the information I have to offer on here from My Approach, to my About Me, then shoot me a message and tell me all about yourself and your vision for your story!",
+        "name": "wedding phothography",
+        "price": 2199
+    },
+    {
+        "img": "https://i.ibb.co/J3tKLHs/tour.jpg",
+        "description": "Travel photography differs from other subcategories of photography. It is a genre that has few limitations to its image qualifiers, but will also test the photographer to great lengths due to the abundance of challenges faced.",
+        "name": "Tour photography",
+        "price": 3199
+    },
+    {
+        "img": "https://i.ibb.co/881ryTT/fashion1.jpg",
+        "description": "Fashion photographers are responsible for how clothing is presented in advertising campaigns, catalogues and fashion magazines. They work closely with designers and fashion houses to ensure they are portraying the desired image for the brand. They work in studios or carry out shoots on location.",
+        "name": "Fashion photography",
+        "price": 1199
+    },
+    {
+        "img": "https://i.ibb.co/Fxs1qVv/architectural1.jpg",
+        "description": "Architecture is one of the most appreciated art forms that date back to the time before the Pyramids were erected. It took many forms; even the simplest geometrical lines were considered architecture.",
+        "name": "Architectural photography",
+        "price": 2000
+    },
+    {
+        "img": "https://i.ibb.co/wBN76Yx/10-best-wildlife-photography.jpg",
+        "description": "Wildlife photography is a genre of photography that records the life of animals in their natural settings, like in a forest or underwater. So, wildlife photography often constitutes the images of animals in movement or action such as eating, fighting, or in flight.",
+        "name": "Wild Photography",
+        "price": 1000
+    },
+    {
+        "img": "https://i.ibb.co/7nLGgrh/canon-pro-tom-jenkins-sports-tips-1-1140.jpg",
+        "description": "What Is Sports Photography? Sports photography is a type of photography that covers every sport and sporting event, capturing the action of a game and behind the scenes of the players. This type of photography helps to promote brands, the players, as well as the sport.",
+        "name": "Sports Photography",
+        "price": 2000
+    }
+]
