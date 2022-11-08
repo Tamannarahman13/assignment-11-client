@@ -34,8 +34,8 @@ const Header = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost normal-case text-xl">
-                    daisy ui
+                <Link to='/' className="btn btn-ghost font-bold text-2xl normal-case text-xl">
+                    Ideal Photo Session
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
