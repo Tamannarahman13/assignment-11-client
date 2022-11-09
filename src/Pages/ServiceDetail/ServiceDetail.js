@@ -2,12 +2,33 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 const ServiceDetail = () => {
+    const { _id, img, price, description, name } = useLoaderData()
 
-    const handleReview = () => {
+    const handlePlaceReview = event => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const message = form.message.value;
+
+        const review = {
+            customer: name,
+            message
+        }
+
+        fetch('https://assignment-11-server-alpha.vercel.app/reviews', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(review)
+        })
+            .then(res => res.json())
+            .then(data => console.log(data))
+            .catch(err => console.error(err));
+
 
     }
 
-    const { _id, img, price, description, name } = useLoaderData()
     return (
         <div className=''>
             <div className="card card-compact  w-96 bg-base-100 shadow-xl">
@@ -19,12 +40,16 @@ const ServiceDetail = () => {
 
                 </div>
             </div>
-            <div>
-                <h1 className='text-xl'>Add Review</h1>
-                <textarea className='border-2' name="" id="" cols="60"></textarea>
+            <h1 className='text-xl'>Add Review</h1>
+            <form onSubmit={handlePlaceReview}>
+                <div className='grid grid-cols-1 gap-4'>
+                    <input name='name' type="text" placeholder="name" className="input input-bordered w-full " required />
 
-            </div>
-            <button onClick={handleReview} className="btn btn-active btn-accent text-white">Review</button>
+                </div>
+                <textarea name='message' className="textarea textarea-bordered h-24 w-full" placeholder="your review"></textarea>
+                <input className='btn ' type="submit" value="place your review" />
+            </form>
+
 
         </div>
     );

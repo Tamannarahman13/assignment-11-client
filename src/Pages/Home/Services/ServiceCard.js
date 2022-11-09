@@ -7,12 +7,12 @@ const ServiceCard = ({ service }) => {
         <div className="card card-compact w-96 bg-base-100 shadow-xl">
             <figure><img src={img} alt="Shoes" /></figure>
             <div className="card-body">
-                <h2 className="card-title">{name}</h2>
+                <h2 className="card-title text-accent">{name}</h2>
                 <p>{description}</p>
                 <p className='font-bold'>Price:{price}</p>
                 <div className="card-actions justify-end">
                     <Link to={`/services/${_id}`}>
-                        <button className="btn btn-primary">Buy Now</button>
+                        <button className="btn btn-accent">Details</button>
                     </Link>
                 </div>
             </div>

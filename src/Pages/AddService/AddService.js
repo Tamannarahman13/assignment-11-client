@@ -5,7 +5,7 @@ const AddService = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         console.log(data)
-        const url = `http://localhost:5000/services`;
+        const url = `https://assignment-11-server-alpha.vercel.app/services`;
         fetch(url, {
             method: 'POST',
             headers: {

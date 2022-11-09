@@ -4,16 +4,16 @@ import ServiceCard from './ServiceCard';
 const Services = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://assignment-11-server-alpha.vercel.app/services')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
     return (
-        <div>
+        <div className='mt-16'>
             <div>
                 <h1 className='text-5xl font-bold text-center text-accent'>Services</h1>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-20'>
 
                 {
                     services.map(service => <ServiceCard
