@@ -4,7 +4,7 @@ import MyReviewRow from './MyReviewRow';
 
 const MyReviews = () => {
     const { user } = useContext(AuthContext);
-    const [reviews, setReviews] = useState({})
+    const [reviews, setReviews] = useState([])
 
 
 
@@ -13,6 +13,26 @@ const MyReviews = () => {
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [user?.email])
+
+
+    const handleDelete = id => {
+        const proceed = window.confirm('Are you sure ,you want to cancel this review')
+        if (proceed) {
+            fetch(`https://assignment-11-server-alpha.vercel.app/reviews/${id}`, {
+                method: 'DELETE',
+
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        alert('deleted successfully')
+                        const remaining = reviews.filter(re => re._id !== id)
+                        setReviews(remaining)
+                    }
+                })
+        }
+    }
 
     return (
         <div>
@@ -37,6 +57,7 @@ const MyReviews = () => {
                             reviews.map(review => <MyReviewRow
                                 key={review._id}
                                 review={review}
+                                handleDelete={handleDelete}
 
                             ></MyReviewRow>)
                         }
