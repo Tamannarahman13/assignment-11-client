@@ -1,18 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const ServiceDetail = () => {
+    const { user } = useContext(AuthContext);
     const { _id, img, price, description, name } = useLoaderData()
 
     const handlePlaceReview = event => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
+        const email = user?.email || 'unregistered';
         const message = form.message.value;
 
         const review = {
+            service: _id,
             customer: name,
-            message
+            email,
+            message,
+
         }
 
         fetch('https://assignment-11-server-alpha.vercel.app/reviews', {
@@ -50,6 +56,7 @@ const ServiceDetail = () => {
             <form onSubmit={handlePlaceReview}>
                 <div className='grid grid-cols-1 gap-4'>
                     <input name='name' type="text" placeholder="name" className="input input-bordered w-full " required />
+                    <input name='email' type="text" placeholder="email" defaultValue={user?.email} className="input input-bordered w-full " required />
 
                 </div>
                 <textarea name='message' className="textarea textarea-bordered h-24 w-full" placeholder="your review"></textarea>
