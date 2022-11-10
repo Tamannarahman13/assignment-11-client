@@ -6,6 +6,7 @@ const ServiceDetail = () => {
     const { user } = useContext(AuthContext);
     const { _id, img, price, description, name } = useLoaderData()
 
+
     const handlePlaceReview = event => {
         event.preventDefault();
         const form = event.target;

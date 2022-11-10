@@ -1,9 +1,16 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
+    const location = useLocation()
+    const navigate = useNavigate();
+
+    const from = location.state?.from?.pathname || '/'
+
+
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
@@ -14,6 +21,8 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                navigate(from, { replace: true });
+
             })
             .catch(error => console.error(error))
     }
@@ -41,9 +50,10 @@ const Login = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <input className='btn btn-primary' type="submit" value="Login" />
+                            <input className='btn btn-accent' type="submit" value="Login" />
                         </div>
-                        <p className='text-center'>New to Genius Car <Link className='text-orange-600 font-bold' to='/signup'>Sign Up</Link></p>
+                        <p className='text-center'>New to Ideal Photo Session <Link className='text-orange-600 font-bold' to='/signup'>Sign Up</Link></p>
+                        <SocialLogin></SocialLogin>
                     </form>
                 </div>
             </div>
