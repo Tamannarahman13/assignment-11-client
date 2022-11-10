@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import AllReviews from './AllReviews/AllReviews';
 
 const ServiceDetail = () => {
     const { user } = useContext(AuthContext);
@@ -53,7 +54,10 @@ const ServiceDetail = () => {
 
                 </div>
             </div>
-            <h1 className='text-xl'>Add Review</h1>
+            <div>
+                <AllReviews></AllReviews>
+            </div>
+            <h1 className='text-2xl font-bold'>Add Review</h1>
             <form onSubmit={handlePlaceReview}>
                 <div className='grid grid-cols-1 gap-4'>
                     <input name='name' type="text" placeholder="name" className="input input-bordered w-full " required />
@@ -61,7 +65,7 @@ const ServiceDetail = () => {
 
                 </div>
                 <textarea name='message' className="textarea textarea-bordered h-24 w-full" placeholder="your review"></textarea>
-                <input className='btn ' type="submit" value="place your review" />
+                <input className='btn mb-10 ' type="submit" value="place your review" />
             </form>
 
 
