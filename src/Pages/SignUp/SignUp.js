@@ -22,7 +22,7 @@ const SignUp = () => {
         <div className="hero">
             <div className="hero-content flex-col ">
                 <div className="text-center">
-                    <h1 className="text-5xl font-bold">Sign Up</h1>
+                    <h1 className="text-5xl font-bold">SignUp</h1>
 
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
